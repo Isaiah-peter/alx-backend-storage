@@ -37,6 +37,7 @@ def count_calls(method: Callable) -> Callable:
 
 class Cache:
     """ class """
+
     def __init__(self):
         """ constructor - store an instance of the Redis client as a private
         variable named _redis and flush the instance using flushdb """
