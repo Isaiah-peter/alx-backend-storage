@@ -3,6 +3,7 @@
 
 import redis
 import uuid
+from typing import Union
 
 
 class Cache:
@@ -11,7 +12,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data):
+    def store(self, data: Union[str, bytes, int, float]):
         """method that takes a data argument and returns a string"""
         id = str(uuid.uuid4())
         self._redis.set(id, data)
